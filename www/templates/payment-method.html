@@ -1,0 +1,22 @@
+<!--
+  This template loads for the 'payment_method' state (app.js)
+-->
+<ion-view view-title="Payment methods">
+
+  <ion-content class="checkout stable-bg">
+    <div class="list">
+
+      <ion-radio ng-model="choice" ng-value="'A'" ng-change="changeMethod('cash')">
+        Cash
+        <p class="text-hint">Use cash</p>
+      </ion-radio>
+
+      <ion-radio ng-model="choice" ng-value="'B'" ng-change="changeMethod('cash')">
+        Card
+        <p class="text-hint">Credit card XXX71</p>
+      </ion-radio>
+
+    </div>
+
+  </ion-content>
+</ion-view>

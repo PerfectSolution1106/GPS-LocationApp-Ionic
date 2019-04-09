@@ -1,0 +1,40 @@
+<!--
+  This template loads for the 'driver' state (app.js)
+  driver is a $cope variable in DriverCtrl (controllers.js)
+  DriverCtrl pull data from Drivers service (services.js)
+-->
+<ion-view view-title="Driver found">
+  <ion-content scroll="false">
+    <div class="driver-top dark-bg light text-center">
+      <span>Success! We found you a driver</span>
+    </div>
+
+    <div class="driver-info rlt text-center">
+
+      <div class="driver-picture padding-bottom">
+
+        <img class="circle" src="img/thumb/adam.jpg" alt=""/>
+      </div>
+
+      <h5 class="no-margin">Hi, my name is</h5>
+      <h3 class="no-margin balanced">{{ driver.name }}</h3>
+      <h5 class="no-margin">and I am {{ driver.distance }}KM away</h5>
+
+      <div class="driver-plate row">
+
+        <div class="col">
+          <div class="text-hint">Plate Number</div>
+          <strong>{{ driver.plate }}</strong>
+        </div>
+
+        <div class="col">
+          <div class="text-hint">Please pay by</div>
+          <strong>Cash</strong>
+        </div>
+      </div>
+
+      <div class="button button-balanced button-block" ng-click="track()">Next</div>
+    </div>
+
+  </ion-content>
+</ion-view>

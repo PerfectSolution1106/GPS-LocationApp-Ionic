@@ -1,0 +1,12 @@
+{
+  "name": "Taxi Man",
+  "app_id": "7575c83c",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
+}

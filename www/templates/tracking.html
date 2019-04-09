@@ -1,0 +1,26 @@
+<!--
+  This template loads for the 'tracking' state (app.js)
+  driver is a $cope variable in TrackingCtrl (controllers.js)
+  TrackingCtrl pull data from Drivers service (services.js)
+-->
+<ion-view view-title="Driver on the way" ng-init="init()">
+  <ion-content scroll="false">
+    <!-- Show map here -->
+    <div id="map_tracking" ng-style="{height: mapHeight + 'px'}"></div>
+
+    <div class="tracking-info item item-icon-left">
+      <img class="circle icon" src="img/thumb/adam.jpg" alt=""/>
+      <div class="item-content">
+        <div>
+          <strong>{{ driver.plate }}</strong>
+          <div>{{ driver.name }}</div>
+        </div>
+
+        <div class="action-icons">
+          <i class="ion-ios-telephone gray"></i>
+          <i class="ion-ios-email gray"></i>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

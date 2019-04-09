@@ -1,0 +1,71 @@
+<!--
+  This template loads for the 'home' state (app.js)
+  Show list of shortcuts to other screens
+-->
+<ion-view view-title="Taxi Man" ng-init="init()">
+  <ion-content scroll="false">
+    <!-- Show map here -->
+    <div id="map" ng-style="{height: mapHeight + 'px'}"></div>
+
+    <div class="modal-bg black-transparent" ng-show="showModalBg"></div>
+
+    <div class="map-overlay list">
+      <div class="item">
+        <span class="label gray">PICK-UP ADDRESS</span>
+        <label class="item item-input"><input type="text" g-places-autocomplete ng-model="location.pickup" /></label>
+      </div>
+      <div class="item">
+        <span class="label gray">DROP-OFF ADDRESS</span>
+        <label class="item item-input"><input type="text" g-places-autocomplete ng-model="location.dropoff" /></label>
+      </div>
+    </div>
+
+    <!-- Booking information -->
+    <div class="booking-info">
+      <div class="button-circle button-next balanced-bg light" ng-hide="showForm" ng-click="toggleForm()">NEXT</div>
+
+      <div class="vehicles row text-center" ng-hide="showForm">
+        <div class="col item-vehicle" ng-repeat="vehicle in vehicles" ng-class="{'active': vehicle.active}" ng-click="toggleVehicle($index)">
+          <i class="{{ vehicle.icon }}"></i>
+          <span>{{ vehicle.name }}</span>
+        </div>
+      </div>
+
+      <div class="booking-form list padding-left padding-right stable-bg" ng-show="showForm">
+
+        <div class="item item-icon-left item-icon-right">
+          <i class="icon ion-cash"></i>
+          <div ui-sref="payment_method">
+            <div>Payment</div>
+            <span class="bold">Cash</span>
+          </div>
+          <i class="icon ion-arrow-right-b gray"></i>
+        </div>
+
+        <div class="item row">
+          <div class="col button button-light">
+            Pick-up Now
+          </div>
+          <div class="col button">
+            Pick-up Later
+          </div>
+        </div>
+
+        <div class="item item-icon-left" ng-click="showNotePopup()">
+          <i class="icon ion-ios-compose-outline"></i>
+          <span class="italic dark" ng-hide="note">Notes to driver</span>
+          <span class="dark" ng-show="note">{{ note }}</span>
+        </div>
+
+        <div class="item item-icon-left" ng-click="showPromoPopup()">
+          <i class="icon ion-pricetag"></i>
+          <span class="italic dark" ng-hide="promo">Promo Code</span>
+          <span class="dark"  ng-show="promo">{{ promo }}</span>
+        </div>
+
+        <div class="button button-balanced button-block" ng-click="book()">BOOK</div>
+
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

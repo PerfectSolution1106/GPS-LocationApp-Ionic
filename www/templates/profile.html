@@ -1,0 +1,36 @@
+<!--
+  This template loads for the 'profile' state (app.js)
+  Show user profile
+  user is a $scope variable in ProfileCtrl (controllers.js)
+-->
+<ion-view view-title="{{ user.name }}">
+  <ion-content>
+    <!--Profile picture-->
+    <div class="text-center user-profile dark-bg">
+
+      <img class="profile-picture circle" menu-close="" src="{{ user.profile_picture }}">
+    </div>
+
+    <!--Edit profile setting-->
+    <div class="list">
+      <label class="item item-input item-stacked-label">
+        <span class="input-label balanced">Name</span>
+        <input type="text" ng-model="user.name">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label balanced">Phone</span>
+        <input type="text" ng-model="user.phone">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label balanced">Email</span>
+        <input type="text" ng-model="user.email">
+      </label>
+    </div>
+
+    <!--Action buttons-->
+    <div class="padding">
+      <button class="button button-block facebook-color light">LOGIN WITH FACEBOOK</button>
+      <div class="text-center assertive">REMOVE ACCOUNT</div>
+    </div>
+  </ion-content>
+</ion-view>

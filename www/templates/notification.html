@@ -1,0 +1,17 @@
+<!--
+  This template loads for the 'notification' state (app.js)
+  Show list of notifications
+  notifications is a $scope variable in NotificationCtrl (controllers.js)
+  NotificationCtrl pull data from Notifications service (services.js)
+-->
+<ion-view view-title="Notification">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-icon-left" ng-repeat="noti in notifications">
+        <i class="icon ion-ios-email-outline balanced"></i>
+        <div ng-class="{'bold': !noti.read}">{{ noti.title }}</div>
+        <span>{{ noti.createdAt }}</span>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

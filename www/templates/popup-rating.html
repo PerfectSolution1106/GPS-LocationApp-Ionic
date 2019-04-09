@@ -1,0 +1,14 @@
+<!--
+  This template is for driver rating
+-->
+<div class="text-center">
+  <!-- subtitle -->
+  <span class="gray">
+    We hope you have enjoyed your ride, For comments, compliments or enquiries, please write to us below
+  </span>
+
+  <!-- Rating stars -->
+  <div class="rating-stars">
+    <i class="ion-android-star text-3x" ng-repeat="star in data.stars track by $index" ng-class="{'balanced': star, 'gray': !star}"></i>
+  </div>
+</div>

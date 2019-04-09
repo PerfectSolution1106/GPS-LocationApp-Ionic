@@ -1,0 +1,345 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+
+// overwrite default colors
+//$balanced:                        #00B140 !default;
+$balanced:                        #cc0000 !default;
+
+// new color
+$gray:                            #898D97;
+
+// some variables
+$driverProfilePictureSize:        120px;
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "../www/lib/ionic/scss/ionic";
+
+// common style
+a {
+  color: inherit;
+  text-decoration: none;
+}
+// common class
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.rlt {
+  position: relative;
+}
+
+.cf {
+  clear: both;
+}
+
+.no-border {
+  border: none;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.padding-20 {
+  padding: 20px;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+
+  .col-33 {
+    padding: 5px;
+  }
+}
+
+.gray {
+  color: $gray;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.text-3x {
+  font-size: 3em;
+}
+
+.black-transparent {
+  background: rgba(0, 0, 0, 0.8);
+  color: $light;
+}
+.facebook-color {
+  background: #4C66A4;
+}
+
+// side menu
+.menu-left {
+  img.profile-picture {
+    width: 7em;
+    height: 7em;
+    margin-top: 0.75em;
+  }
+}
+
+.align-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-hint {
+  font-size: 0.8em;
+  color: #666;
+}
+
+.full-width {
+  width: 100%;
+}
+
+// home page
+#map {
+  width: 100%;
+}
+
+.modal-bg {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.map-overlay {
+  position: absolute;
+  top: 10px;
+  left: 3%;
+  width: 94%;
+
+  .item {
+    .label {
+      font-size: 0.8em;
+    }
+  }
+}
+
+.booking-info {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  transition: 0.5s;
+
+  .button-circle {
+    position: absolute;
+    top: -25px;
+    right: 6px;
+    padding: 10px;
+    border-radius: 50%;
+    line-height: 36px;
+  }
+
+  .vehicles {
+    background-color: $light;
+    padding: 0;
+    min-height: 76px;
+
+    .item-vehicle {
+      color: $gray;
+
+      &.active {
+        border-bottom: 4px solid $balanced;
+        color: $dark;
+      }
+
+      i {
+        display: block;
+        font-size: 3em;
+      }
+    }
+  }
+
+  .item {
+    background: none;
+    border-left: none;
+    border-right: none;
+
+    &.row {
+      margin: -1px;
+      padding: 5px 0;
+      width: inherit;
+    }
+  }
+}
+
+// login page
+.logo {
+  margin: 20px auto 0;
+  padding: 0.25em 0.5em 0.25em 0.27em;
+  width: 1.5em;
+  border-radius: 10%;
+  font-size: 3em;
+}
+
+.login-bg {
+  background: url("../img/bg2.jpg") no-repeat center;
+  background-size: 100% 100%;
+
+  .scroll {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+
+    .login-content {
+      min-width: 86%;
+
+      .light-bg {
+
+        // keep only bottom border
+        .item-input {
+          margin: 0;
+          padding-left: 0;
+          border: none;
+          border-bottom: 1px solid #DDD;
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+// finding page
+.location-animation {
+  margin: 0 auto;
+  width: 240px;
+  height: 240px;
+  // background: #009B54;
+  background: #cc0000;
+
+  i {
+    margin-top: 100px;
+    font-size: 3em;
+  }
+}
+
+.list-drivers {
+  .item {
+    margin-bottom: 5px;
+    border-radius: 3px;
+  }
+}
+
+// driver profile page
+.driver-top {
+  height: 30%;
+  padding-top: 15%;
+
+  &>span {
+    font-size: 1.2em;
+  }
+}
+
+.driver-info {
+  padding-top: $driverProfilePictureSize / 2 + 20px;
+  height: 70%;
+
+  .driver-picture {
+    position: absolute;
+    top: - $driverProfilePictureSize / 2;
+    width: 100%;
+    text-align: center;
+
+    &>img {
+      width: $driverProfilePictureSize;
+      height: $driverProfilePictureSize;
+    }
+  }
+
+  .driver-plate {
+    margin-top: 40px;
+  }
+
+  .button {
+    position: absolute;
+    bottom: 0;
+    width: 90%;
+    margin-left: 5%;
+  }
+}
+
+// tracking page
+.tracking-info {
+  position: absolute;
+  bottom: 0;
+  padding-left: 66px;
+  width: 100%;
+
+  .icon {
+    left: 5px;
+    margin-top: 5px;
+    width: 54px;
+    height: 54px;
+  }
+
+  .item-content {
+    position: relative;
+    padding-right: 80px;
+
+    .action-icons {
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 2.5em;
+    }
+  }
+}
+
+// support page
+.feedback-form {
+  textarea {
+    width: 100%;
+    height: 240px;
+    padding: 5px;
+    background: #EEE;
+  }
+}
+
+// profile page
+.user-profile {
+  padding: 30px 10px;
+
+  .profile-picture {
+    width: 80px;
+    height: 80px;
+  }
+}
